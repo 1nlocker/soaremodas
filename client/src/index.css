@@ -1,0 +1,145 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 0 0% 100%;
+  --foreground: 20 14.3% 4.1%;
+  --muted: 60 4.8% 95.9%;
+  --muted-foreground: 25 5.3% 44.7%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 20 14.3% 4.1%;
+  --card: 0 0% 100%;
+  --card-foreground: 20 14.3% 4.1%;
+  --border: 20 5.9% 90%;
+  --input: 20 5.9% 90%;
+  --primary: 45 100% 51%; /* Gold */
+  --primary-foreground: 0 0% 0%; /* Black text on gold */
+  --secondary: 60 4.8% 95.9%;
+  --secondary-foreground: 24 9.8% 10%;
+  --accent: 45 100% 51%; /* Gold */
+  --accent-foreground: 0 0% 0%;
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 60 9.1% 97.8%;
+  --ring: 20 14.3% 4.1%;
+  --radius: 0.5rem;
+  
+  /* Custom Soares Modas colors */
+  --gold: 45 100% 51%; /* #D4AF37 */
+  --dark-gold: 42 83% 42%; /* #B8941F */
+  --light-gold: 48 87% 81%; /* #F4E8A6 */
+}
+
+.dark {
+  --background: 240 10% 3.9%;
+  --foreground: 0 0% 98%;
+  --muted: 240 3.7% 15.9%;
+  --muted-foreground: 240 5% 64.9%;
+  --popover: 240 10% 3.9%;
+  --popover-foreground: 0 0% 98%;
+  --card: 240 10% 3.9%;
+  --card-foreground: 0 0% 98%;
+  --border: 240 3.7% 15.9%;
+  --input: 240 3.7% 15.9%;
+  --primary: 45 100% 51%; /* Gold */
+  --primary-foreground: 0 0% 0%;
+  --secondary: 240 3.7% 15.9%;
+  --secondary-foreground: 0 0% 98%;
+  --accent: 240 3.7% 15.9%;
+  --accent-foreground: 0 0% 98%;
+  --destructive: 0 62.8% 30.6%;
+  --destructive-foreground: 0 0% 98%;
+  --ring: 240 4.9% 83.9%;
+  --radius: 0.5rem;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+  .gold {
+    color: #D4AF37;
+  }
+  
+  .bg-gold {
+    background-color: #D4AF37;
+  }
+  
+  .text-gold {
+    color: #D4AF37;
+  }
+  
+  .border-gold {
+    border-color: #D4AF37;
+  }
+  
+  .bg-dark-gold {
+    background-color: #B8941F;
+  }
+  
+  .text-dark-gold {
+    color: #B8941F;
+  }
+  
+  .bg-light-gold {
+    background-color: #F4E8A6;
+  }
+  
+  .text-light-gold {
+    color: #F4E8A6;
+  }
+  
+  .hero-gradient {
+    background: linear-gradient(135deg, rgba(0,0,0,0.8) 0%, rgba(212,175,55,0.1) 100%);
+  }
+  
+  .btn-gold {
+    background: linear-gradient(45deg, #D4AF37, #B8941F);
+    transition: all 0.3s ease;
+  }
+  
+  .btn-gold:hover {
+    background: linear-gradient(45deg, #B8941F, #A67C00);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(212,175,55,0.3);
+  }
+  
+  .product-card:hover {
+    transform: translateY(-8px);
+    transition: all 0.3s ease;
+  }
+  
+  .animate-fade-in {
+    animation: fadeIn 0.5s ease-in-out;
+  }
+  
+  .animate-slide-up {
+    animation: slideUp 0.6s ease-out;
+  }
+  
+  .animate-pulse-gold {
+    animation: pulseGold 2s infinite;
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(30px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes pulseGold {
+  0%, 100% { background-color: #D4AF37; }
+  50% { background-color: #B8941F; }
+}
